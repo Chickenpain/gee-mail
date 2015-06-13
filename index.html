@@ -4,8 +4,20 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-        window.setInterval(loadGeeMails(), 30000)
-        // use .click() & .toggle()
+        
+        function getRandomDate(){
+    var fulldate = []
+	var year = 2013;
+	var month = Math.floor(Math.random() * 12) + 1;
+	var day = Math.floor(Math.random() * 30) + 1;
+	var hours = Math.floor(Math.random() * 12) + 1;
+	var minutes = Math.floor(Math.random() * 59) + 1;
+	fulldate.push(year, month, day, hours, minutes);
+	document.getElementById("firstDate").innerHTML = fulldate;
+}
+
+    	// this is all wrong^^^^^^^ doesn't load anything. need to figure out a different way
+        // use $ .click() & .toggle()
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         //changes
@@ -14,6 +26,25 @@
     </script>
 	</head>
 	<body>
+		<table border="2px">
+			<thead>
+				<tr>
+					<button type="button" onclick="getRandomDate()">Receive Mail</button>
+				</tr>
+				<tr>
+					<th colspan="3">Your Mail</th>
+				</tr>
+				<tr>
+					<th>Date</th>
+					<th>Sender</th>
+					<th>Subject</th>
+				</tr>
+				<tr>
+					<th id="firstDate"></th>
+				</tr>
+			</thead>
+		</table>
+
 		<div class="container" id="main">
 			Build Me!
 		</div>
